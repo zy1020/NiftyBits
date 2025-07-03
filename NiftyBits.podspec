@@ -12,6 +12,8 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '13.0'
 
+  s.swift_version = '5.0'
+  
   # ✅ 按照 Objective-C 文件路径填写
   s.source_files  = 'Sources/**/*.{h,m}'
 
@@ -22,9 +24,9 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   # ✅ 第三方依赖（如果支持 OC）
-  s.dependency 'AFNetworking'
+  s.dependency 'AFNetworking', :modular_headers => true
   s.dependency 'FBSDKLoginKit'
   s.dependency 'RevenueCat'
   s.dependency 'AppsFlyerFramework'
-  s.dependency 'SVProgressHUD'
+  s.dependency 'SVProgressHUD', :modular_headers => true
 end
