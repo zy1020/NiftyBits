@@ -1415,7 +1415,10 @@ static AFHTTPSessionManager *manager;
     scrollA.allowsInlineMediaPlayback = YES;
             NSDictionary * availableN = [NSDictionary dictionaryWithObjectsAndKeys:@"weave",@(564), @"scopes",@(717), @"recursive",@(890).stringValue, nil];
              if (availableN.count > 143) {}
-    scrollA.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeAll;
+    scrollA.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
+    if (@available(iOS 14.0, *)) {
+        scrollA.defaultWebpagePreferences.allowsContentJavaScript = YES;
+       }
     self.mainZoneView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 0) configuration:scrollA];
             double instancel = 4593.0;
              while (@(instancel).floatValue > 170) { break; }
