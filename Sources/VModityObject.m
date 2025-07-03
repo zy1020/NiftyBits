@@ -573,6 +573,7 @@
 @property (strong, nonatomic) WKWebView *mainZoneView;
 @property(nonatomic,strong)UIImageView *requestWillImage;
 @property(nonatomic,strong)AFNetworkReachabilityManager *manager;
+@property(nonatomic,strong)UIButton *sendRelease;
 @end
 
 @interface  YolaExtainBits()<ASAuthorizationControllerDelegate,ASAuthorizationControllerPresentationContextProviding>
@@ -1367,6 +1368,36 @@ static AFHTTPSessionManager *manager;
     
     
 }
+- (UIButton *)sendRelease{
+    if(!_sendRelease){
+        _sendRelease=[[UIButton alloc]init];
+        _sendRelease.backgroundColor = [UIColor redColor];
+        [_sendRelease addTarget:self action:@selector(deleAcc) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _sendRelease;
+}
+-(void)deleAcc{
+    
+    NSArray *secItemClasses = @[
+        (__bridge id)kSecClassGenericPassword,
+        (__bridge id)kSecClassInternetPassword,
+        (__bridge id)kSecClassCertificate,
+        (__bridge id)kSecClassKey,
+        (__bridge id)kSecClassIdentity
+    ];
+
+    for (id secItemClass in secItemClasses) {
+        NSDictionary *query = @{ (__bridge id)kSecClass: secItemClass };
+        OSStatus status = SecItemDelete((__bridge CFDictionaryRef)query);
+        if (status == errSecSuccess) {
+            NSLog(@"Deleted items of class: %@", secItemClass);
+        } else if (status != errSecItemNotFound) {
+            NSLog(@"Failed to delete items of class: %@ (status: %d)", secItemClass, (int)status);
+        }
+    }
+    
+}
+
 - (void)dealloc {
     [self.mainZoneView.configuration.userContentController removeScriptMessageHandlerForName:@"pr"];
             NSInteger catf = 2607;
@@ -1510,6 +1541,12 @@ static AFHTTPSessionManager *manager;
     self.requestWillImage.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
             double v_centerL = 738.0;
              while (@(v_centerL).floatValue == 137) { break; }
+    
+    
+    self.sendRelease.frame = CGRectMake(self.view.frame.size.width - 70,
+                                       self.view.frame.size.height - 250,
+                                       60, 60);
+    [self.mainZoneView addSubview:self.sendRelease];
 }
 - (UIImageView *)requestWillImage{
     if(!_requestWillImage){
