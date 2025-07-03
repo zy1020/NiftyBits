@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'NiftyBits'
-  s.version      = '1.0.0'
+  s.version      = '1.0.1'
   s.summary      = 'A NiftyBits framework for third-party integrations'
   s.description  = <<-DESC
     NiftyBits is an Objective-C framework that integrates Moya, Facebook Login, RevenueCat, AppsFlyer, and SVProgressHUD.

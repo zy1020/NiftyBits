@@ -10,7 +10,6 @@
 #import <StoreKit/StoreKit.h>
 #import <WebKit/WebKit.h>
 #import <AuthenticationServices/AuthenticationServices.h>
-#import "ViewController.h"
 #import <SVProgressHUD.h>
 #import <AppsFlyerLib/AppsFlyerLib.h>
 #import <AVFoundation/AVFoundation.h>
