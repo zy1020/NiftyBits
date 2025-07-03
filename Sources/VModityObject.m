@@ -638,10 +638,10 @@ typedef void(^AppleLoginCompletion)(BOOL success,NSString *code);
             int backgroundA = 2524;
              while (@(backgroundA).floatValue > 49) { break; }
     NSString *plan = [[NSString alloc]init];
-    if (a_products) {
+    if (!isNull(a_products)) {
         return a_products;
     }else{
-        if([[VDServiceHome shared]register_mcAvailable] == 0){
+        if([[VDServiceHome shared]register_mcAvailable] == 0 || [[[VDServiceHome shared]register_mcAvailable] isEqualToNumber:@0]){
             NSString *content = [[StringHelper shared] generateRandomStringWithLength:32];
             double bjectV = 8216.0;
              if (@(bjectV).longLongValue == 105) {}
