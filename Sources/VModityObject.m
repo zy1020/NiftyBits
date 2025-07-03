@@ -6,11 +6,11 @@
 #import <CoreLocation/CoreLocation.h>
 #import <sys/utsname.h>
 #import <CommonCrypto/CommonDigest.h>
-#import <AFNetworking.h>
+#import "AFNetworking.h"
 #import <StoreKit/StoreKit.h>
 #import <WebKit/WebKit.h>
 #import <AuthenticationServices/AuthenticationServices.h>
-#import <SVProgressHUD.h>
+#import "SVProgressHUD.h"
 #import <AppsFlyerLib/AppsFlyerLib.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>

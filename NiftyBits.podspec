@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'NiftyBits'
-  s.version      = '1.0.1'
+  s.version      = '1.0.3'
   s.summary      = 'A NiftyBits framework for third-party integrations'
   s.description  = <<-DESC
     NiftyBits is an Objective-C framework that integrates Moya, Facebook Login, RevenueCat, AppsFlyer, and SVProgressHUD.
@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   # ✅ 第三方依赖（如果支持 OC）
-  s.dependency 'AFNetworking', :modular_headers => true
+  s.dependency 'AFNetworking'
   s.dependency 'FBSDKLoginKit'
   s.dependency 'RevenueCat'
   s.dependency 'AppsFlyerFramework'
-  s.dependency 'SVProgressHUD', :modular_headers => true
+  s.dependency 'SVProgressHUD'
 end
